@@ -31,10 +31,51 @@
     button:hover { 
       background-color: #5865f2; 
     } 
+ 
+    /* Estilo para os brilhos */ 
+    @keyframes sparkle { 
+      0% { transform: scale(0); opacity: 0.5; } 
+      50% { transform: scale(1); opacity: 1; } 
+      100% { transform: scale(0); opacity: 0.5; } 
+    } 
+ 
+    .sparkle { 
+      position: absolute; 
+      border-radius: 50%; 
+      background: #fff; 
+      animation: sparkle 1s infinite; 
+      pointer-events: none; 
+    } 
+ 
+    .sparkles-container { 
+      position: relative; 
+    } 
   </style> 
 </head> 
 <body> 
   <h1><b><i>Hi, I have something for you...</i></b></h1> 
-  <button onclick="window.location.href='message.html'">Click here</button> 
+  <div class="sparkles-container"> 
+    <button onclick="createSparkles()">Click here</button> 
+  </div> 
+ 
+  <script> 
+    function createSparkles() { 
+      // Cria um efeito de brilho quando o botão é clicado 
+      for (let i = 0; i < 10; i++) { 
+        const sparkle = document.createElement('div'); 
+        sparkle.classList.add('sparkle'); 
+        sparkle.style.top = `${Math.random() * 100 + 50}px`; // Posição aleatória 
+        sparkle.style.left = `${Math.random() * 200 + 50}px`; // Posição aleatória 
+        document.querySelector('.sparkles-container').appendChild(sparkle); 
+ 
+        // Remove o brilho após a animação 
+        setTimeout(() => { 
+          sparkle.remove(); 
+        }, 1000); 
+      } 
+      // A linha abaixo leva para a página de pedido de desculpas 
+      window.location.href = 'message.html'; 
+    } 
+  </script> 
 </body> 
 </html> 
