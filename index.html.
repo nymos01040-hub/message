@@ -1,0 +1,42 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+  <title>Hi there!</title> 
+  <style> 
+    body { 
+      background-color: #1e1b3a; 
+      color: #cfdcff; 
+      font-family: Arial, sans-serif; 
+      text-align: center; 
+      padding: 100px; 
+    } 
+ 
+    h1 { 
+      font-size: 32px; 
+      font-weight: bold; 
+      font-style: italic; 
+    } 
+ 
+    button { 
+      margin-top: 30px; 
+      padding: 12px 24px; 
+      font-size: 18px; 
+      background-color: #3b4cca; 
+      color: white; 
+      border: none; 
+      border-radius: 10px; 
+      cursor: pointer; 
+    } 
+ 
+    button:hover { 
+      background-color: #5865f2; 
+    } 
+  </style> 
+</head> 
+<body> 
+  <h1><b><i>Hi, I have something for you...</i></b></h1> 
+  <a href="message.html"> 
+    <button>Click here</button> 
+  </a> 
+</body> 
+</html>
